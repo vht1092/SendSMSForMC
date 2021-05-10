@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:tns1="http://beans.webservices.com.my" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:impl="urn:webservices.com.my" xmlns:intf="urn:webservices.com.my" targetNamespace="urn:webservices.com.my" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://beans.webservices.com.my">
+      <xsd:import namespace="urn:webservices.com.my" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="CardReloadReqBean">
+        <xsd:sequence>
+          <xsd:element name="amount" nillable="true" type="soapenc:string" />
+          <xsd:element name="branchCode" nillable="true" type="soapenc:string" />
+          <xsd:element name="currencyCode" nillable="true" type="soapenc:string" />
+          <xsd:element name="expiryDate" nillable="true" type="soapenc:string" />
+          <xsd:element name="fi" nillable="true" type="soapenc:string" />
+          <xsd:element name="pan" nillable="true" type="soapenc:string" />
+          <xsd:element name="referenceNo" nillable="true" type="soapenc:string" />
+          <xsd:element name="reloadMethod" nillable="true" type="soapenc:string" />
+          <xsd:element name="reloadSource" nillable="true" type="soapenc:string" />
+          <xsd:element name="sequenceNo" nillable="true" type="soapenc:string" />
+          <xsd:element name="sourceSystem" nillable="true" type="soapenc:string" />
+          <xsd:element name="src" nillable="true" type="soapenc:string" />
+          <xsd:element name="surchargeFee" nillable="true" type="soapenc:string" />
+          <xsd:element name="surchargeFeeSign" nillable="true" type="soapenc:string" />
+          <xsd:element name="transferorPAN" nillable="true" type="soapenc:string" />
+          <xsd:element name="actInd" nillable="true" type="soapenc:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CardReloadRespBean">
+        <xsd:sequence>
+          <xsd:element name="approvalCode" nillable="true" type="soapenc:string" />
+          <xsd:element name="latestBalance" nillable="true" type="soapenc:string" />
+          <xsd:element name="responseCode" nillable="true" type="soapenc:string" />
+          <xsd:element name="responseDescription" nillable="true" type="soapenc:string" />
+          <xsd:element name="sequenceNo" nillable="true" type="soapenc:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RedeemRewardReqBean">
+        <xsd:sequence>
+          <xsd:element name="crn" nillable="true" type="soapenc:string" />
+          <xsd:element name="fi" nillable="true" type="soapenc:string" />
+          <xsd:element name="sequenceNo" nillable="true" type="soapenc:string" />
+          <xsd:element name="pan" nillable="true" type="soapenc:string" />
+          <xsd:element name="actInd" nillable="true" type="soapenc:string" />
+          <xsd:element name="point" nillable="true" type="soapenc:string" />
+          <xsd:element name="rewardAction" nillable="true" type="soapenc:string" />
+          <xsd:element name="txnDesc" nillable="true" type="soapenc:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RedeemRewardRespBean">
+        <xsd:sequence>
+          <xsd:element name="crn" nillable="true" type="soapenc:string" />
+          <xsd:element name="pointAdjustment" nillable="true" type="soapenc:string" />
+          <xsd:element name="pointAvailable" nillable="true" type="soapenc:string" />
+          <xsd:element name="pointCarriedForward" nillable="true" type="soapenc:string" />
+          <xsd:element name="pointEarnThisMonth" nillable="true" type="soapenc:string" />
+          <xsd:element name="pointRedeemed" nillable="true" type="soapenc:string" />
+          <xsd:element name="responseCode" nillable="true" type="soapenc:string" />
+          <xsd:element name="responseDescription" nillable="true" type="soapenc:string" />
+          <xsd:element name="sequenceNo" nillable="true" type="soapenc:string" />
+          <xsd:element name="pan" nillable="true" type="soapenc:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="HostSignOnReqBean">
+        <xsd:sequence>
+          <xsd:element name="fi" nillable="true" type="soapenc:string" />
+          <xsd:element name="password" nillable="true" type="soapenc:string" />
+          <xsd:element name="sequenceNo" nillable="true" type="soapenc:string" />
+          <xsd:element name="userID" nillable="true" type="soapenc:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="HostSignOnRespBean">
+        <xsd:sequence>
+          <xsd:element name="responseCode" nillable="true" type="soapenc:string" />
+          <xsd:element name="responseDescription" nillable="true" type="soapenc:string" />
+          <xsd:element name="sequenceNo" nillable="true" type="soapenc:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RewardEnquiryReqBean">
+        <xsd:sequence>
+          <xsd:element name="crn" nillable="true" type="soapenc:string" />
+          <xsd:element name="fi" nillable="true" type="soapenc:string" />
+          <xsd:element name="sequenceNo" nillable="true" type="soapenc:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RewardEnquiryPntItems">
+        <xsd:sequence>
+          <xsd:element name="expiryMonth" nillable="true" type="soapenc:string" />
+          <xsd:element name="pointGoingExpired" nillable="true" type="soapenc:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RewardEnquiryPanItems">
+        <xsd:sequence>
+          <xsd:element name="bonusPointOfTheMonth" nillable="true" type="soapenc:string" />
+          <xsd:element name="pan" nillable="true" type="soapenc:string" />
+          <xsd:element name="pointAdjustment" nillable="true" type="soapenc:string" />
+          <xsd:element name="pointAvailable" nillable="true" type="soapenc:string" />
+          <xsd:element name="pointCarriedForward" nillable="true" type="soapenc:string" />
+          <xsd:element name="pointEarnThisMonth" nillable="true" type="soapenc:string" />
+          <xsd:element name="pointRedeemed" nillable="true" type="soapenc:string" />
+          <xsd:element name="rewardEnquiryPntItems" nillable="true" type="intf:ArrayOf_tns2_RewardEnquiryPntItems" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RewardEnquiryRespBean">
+        <xsd:sequence>
+          <xsd:element name="crn" nillable="true" type="soapenc:string" />
+          <xsd:element name="responseCode" nillable="true" type="soapenc:string" />
+          <xsd:element name="responseDescription" nillable="true" type="soapenc:string" />
+          <xsd:element name="rewardEnquiryPanItems" nillable="true" type="intf:ArrayOf_tns2_RewardEnquiryPanItems" />
+          <xsd:element name="sequenceNo" nillable="true" type="soapenc:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CardProfileMaintReqBean">
+        <xsd:sequence>
+          <xsd:element name="actInd" nillable="true" type="soapenc:string" />
+          <xsd:element name="actCde" nillable="true" type="soapenc:string" />
+          <xsd:element name="actType" nillable="true" type="soapenc:string" />
+          <xsd:element name="fi" nillable="true" type="soapenc:string" />
+          <xsd:element name="pan" nillable="true" type="soapenc:string" />
+          <xsd:element name="sequenceNo" nillable="true" type="soapenc:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CardProfileMaintRespBean">
+        <xsd:sequence>
+          <xsd:element name="responseCode" nillable="true" type="soapenc:string" />
+          <xsd:element name="responseDescription" nillable="true" type="soapenc:string" />
+          <xsd:element name="sequenceNo" nillable="true" type="soapenc:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CardAdjustmentReqBean">
+        <xsd:sequence>
+          <xsd:element name="actInd" nillable="true" type="soapenc:string" />
+          <xsd:element name="adjCde" nillable="true" type="soapenc:string" />
+          <xsd:element name="fi" nillable="true" type="soapenc:string" />
+          <xsd:element name="pan" nillable="true" type="soapenc:string" />
+          <xsd:element name="sequenceNo" nillable="true" type="soapenc:string" />
+          <xsd:element name="adjAmt" nillable="true" type="soapenc:string" />
+          <xsd:element name="brchCde" nillable="true" type="soapenc:string" />
+          <xsd:element name="merchantId" nillable="true" type="soapenc:string" />
+          <xsd:element name="termId" nillable="true" type="soapenc:string" />
+          <xsd:element name="officerId" nillable="true" type="soapenc:string" />
+          <xsd:element name="remarks" nillable="true" type="soapenc:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CardAdjustmentRespBean">
+        <xsd:sequence>
+          <xsd:element name="responseCode" nillable="true" type="soapenc:string" />
+          <xsd:element name="responseDescription" nillable="true" type="soapenc:string" />
+          <xsd:element name="sequenceNo" nillable="true" type="soapenc:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DirectDebitReqBean">
+        <xsd:sequence>
+          <xsd:element name="amount" type="soapenc:string" />
+          <xsd:element name="currencyCode" type="soapenc:string" />
+          <xsd:element name="cvv2" nillable="true" type="soapenc:string" />
+          <xsd:element name="expiryDate" type="soapenc:string" />
+          <xsd:element name="fi" type="soapenc:string" />
+          <xsd:element name="mid" type="soapenc:string" />
+          <xsd:element name="pan" type="soapenc:string" />
+          <xsd:element name="referenceNo" type="soapenc:string" />
+          <xsd:element name="sequenceNo" type="soapenc:string" />
+          <xsd:element name="tid" type="soapenc:string" />
+          <xsd:element name="trxDate" type="soapenc:string" />
+          <xsd:element name="trxTime" type="soapenc:string" />
+          <xsd:element name="actInd" nillable="true" type="soapenc:string" />
+          <xsd:element name="merName" nillable="true" type="soapenc:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DirectDebitRespBean">
+        <xsd:sequence>
+          <xsd:element name="approvalCode" nillable="true" type="soapenc:string" />
+          <xsd:element name="referenceNo" type="soapenc:string" />
+          <xsd:element name="responseCode" type="soapenc:string" />
+          <xsd:element name="responseDescription" type="soapenc:string" />
+          <xsd:element name="sequenceNo" type="soapenc:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PINSelectionReqBean">
+        <xsd:sequence>
+          <xsd:element name="fi" nillable="true" type="soapenc:string" />
+          <xsd:element name="actInd" nillable="true" type="soapenc:string" />
+          <xsd:element name="pan" type="soapenc:string" />
+          <xsd:element name="mobileNo" type="soapenc:string" />
+          <xsd:element name="newPIN" type="soapenc:string" />
+          <xsd:element name="sequenceNo" nillable="true" type="soapenc:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PINSelectionRespBean">
+        <xsd:sequence>
+          <xsd:element name="responseCode" nillable="true" type="soapenc:string" />
+          <xsd:element name="responseDescription" nillable="true" type="soapenc:string" />
+          <xsd:element name="sequenceNo" nillable="true" type="soapenc:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="LimitMngmtReqBean">
+        <xsd:sequence>
+          <xsd:element name="action" nillable="true" type="soapenc:string" />
+          <xsd:element name="fi" nillable="true" type="soapenc:string" />
+          <xsd:element name="actInd" nillable="true" type="soapenc:string" />
+          <xsd:element name="pan" type="soapenc:string" />
+          <xsd:element name="holdAmt" type="soapenc:string" />
+          <xsd:element name="sequenceNo" nillable="true" type="soapenc:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="LimitMngmtRespBean">
+        <xsd:sequence>
+          <xsd:element name="responseCode" nillable="true" type="soapenc:string" />
+          <xsd:element name="responseDescription" nillable="true" type="soapenc:string" />
+          <xsd:element name="sequenceNo" nillable="true" type="soapenc:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:webservices.com.my">
+      <xsd:import namespace="http://beans.webservices.com.my" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="ArrayOf_tns2_RewardEnquiryPntItems">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:RewardEnquiryPntItems[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns2_RewardEnquiryPanItems">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:RewardEnquiryPanItems[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="cardAdjustmentResponse">
+    <wsdl:part name="cardAdjustmentReturn" type="tns1:CardAdjustmentRespBean" />
+  </wsdl:message>
+  <wsdl:message name="hostSignOnRequest">
+    <wsdl:part name="in0" type="tns1:HostSignOnReqBean" />
+  </wsdl:message>
+  <wsdl:message name="hostSignOnResponse">
+    <wsdl:part name="hostSignOnReturn" type="tns1:HostSignOnRespBean" />
+  </wsdl:message>
+  <wsdl:message name="cardReloadResponse">
+    <wsdl:part name="cardReloadReturn" type="tns1:CardReloadRespBean" />
+  </wsdl:message>
+  <wsdl:message name="limitMngmtResponse">
+    <wsdl:part name="limitMngmtReturn" type="tns1:LimitMngmtRespBean" />
+  </wsdl:message>
+  <wsdl:message name="rewardAdjustmentResponse">
+    <wsdl:part name="rewardAdjustmentReturn" type="tns1:RedeemRewardRespBean" />
+  </wsdl:message>
+  <wsdl:message name="PINSelectionResponse">
+    <wsdl:part name="PINSelectionReturn" type="tns1:PINSelectionRespBean" />
+  </wsdl:message>
+  <wsdl:message name="rewardEnquiryResponse">
+    <wsdl:part name="rewardEnquiryReturn" type="tns1:RewardEnquiryRespBean" />
+  </wsdl:message>
+  <wsdl:message name="cardAdjustmentRequest">
+    <wsdl:part name="in0" type="tns1:CardAdjustmentReqBean" />
+  </wsdl:message>
+  <wsdl:message name="rewardEnquiryRequest">
+    <wsdl:part name="in0" type="tns1:RewardEnquiryReqBean" />
+  </wsdl:message>
+  <wsdl:message name="cardReloadRequest">
+    <wsdl:part name="in0" type="tns1:CardReloadReqBean" />
+  </wsdl:message>
+  <wsdl:message name="cardProfileMaintenanceRequest">
+    <wsdl:part name="in0" type="tns1:CardProfileMaintReqBean" />
+  </wsdl:message>
+  <wsdl:message name="directDebitRequest">
+    <wsdl:part name="in0" type="tns1:DirectDebitReqBean" />
+  </wsdl:message>
+  <wsdl:message name="rewardAdjustmentRequest">
+    <wsdl:part name="in0" type="tns1:RedeemRewardReqBean" />
+  </wsdl:message>
+  <wsdl:message name="directDebitResponse">
+    <wsdl:part name="directDebitReturn" type="tns1:DirectDebitRespBean" />
+  </wsdl:message>
+  <wsdl:message name="cardProfileMaintenanceResponse">
+    <wsdl:part name="cardProfileMaintenanceReturn" type="tns1:CardProfileMaintRespBean" />
+  </wsdl:message>
+  <wsdl:message name="PINSelectionRequest">
+    <wsdl:part name="in0" type="tns1:PINSelectionReqBean" />
+  </wsdl:message>
+  <wsdl:message name="limitMngmtRequest">
+    <wsdl:part name="in0" type="tns1:LimitMngmtReqBean" />
+  </wsdl:message>
+  <wsdl:portType name="Cardworks">
+    <wsdl:operation name="cardReload" parameterOrder="in0">
+      <wsdl:input name="cardReloadRequest" message="intf:cardReloadRequest" />
+      <wsdl:output name="cardReloadResponse" message="intf:cardReloadResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="rewardAdjustment" parameterOrder="in0">
+      <wsdl:input name="rewardAdjustmentRequest" message="intf:rewardAdjustmentRequest" />
+      <wsdl:output name="rewardAdjustmentResponse" message="intf:rewardAdjustmentResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="hostSignOn" parameterOrder="in0">
+      <wsdl:input name="hostSignOnRequest" message="intf:hostSignOnRequest" />
+      <wsdl:output name="hostSignOnResponse" message="intf:hostSignOnResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="rewardEnquiry" parameterOrder="in0">
+      <wsdl:input name="rewardEnquiryRequest" message="intf:rewardEnquiryRequest" />
+      <wsdl:output name="rewardEnquiryResponse" message="intf:rewardEnquiryResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="cardProfileMaintenance" parameterOrder="in0">
+      <wsdl:input name="cardProfileMaintenanceRequest" message="intf:cardProfileMaintenanceRequest" />
+      <wsdl:output name="cardProfileMaintenanceResponse" message="intf:cardProfileMaintenanceResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="cardAdjustment" parameterOrder="in0">
+      <wsdl:input name="cardAdjustmentRequest" message="intf:cardAdjustmentRequest" />
+      <wsdl:output name="cardAdjustmentResponse" message="intf:cardAdjustmentResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="directDebit" parameterOrder="in0">
+      <wsdl:input name="directDebitRequest" message="intf:directDebitRequest" />
+      <wsdl:output name="directDebitResponse" message="intf:directDebitResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="PINSelection" parameterOrder="in0">
+      <wsdl:input name="PINSelectionRequest" message="intf:PINSelectionRequest" />
+      <wsdl:output name="PINSelectionResponse" message="intf:PINSelectionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="limitMngmt" parameterOrder="in0">
+      <wsdl:input name="limitMngmtRequest" message="intf:limitMngmtRequest" />
+      <wsdl:output name="limitMngmtResponse" message="intf:limitMngmtResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CardworksSoapBinding" type="intf:Cardworks">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="cardReload">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="cardReloadRequest">
+        <wsdlsoap:body use="encoded" namespace="urn:webservices.com.my" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="cardReloadResponse">
+        <wsdlsoap:body use="encoded" namespace="urn:webservices.com.my" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rewardAdjustment">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="rewardAdjustmentRequest">
+        <wsdlsoap:body use="encoded" namespace="urn:webservices.com.my" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="rewardAdjustmentResponse">
+        <wsdlsoap:body use="encoded" namespace="urn:webservices.com.my" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hostSignOn">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="hostSignOnRequest">
+        <wsdlsoap:body use="encoded" namespace="urn:webservices.com.my" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="hostSignOnResponse">
+        <wsdlsoap:body use="encoded" namespace="urn:webservices.com.my" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rewardEnquiry">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="rewardEnquiryRequest">
+        <wsdlsoap:body use="encoded" namespace="urn:webservices.com.my" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="rewardEnquiryResponse">
+        <wsdlsoap:body use="encoded" namespace="urn:webservices.com.my" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cardProfileMaintenance">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="cardProfileMaintenanceRequest">
+        <wsdlsoap:body use="encoded" namespace="urn:webservices.com.my" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="cardProfileMaintenanceResponse">
+        <wsdlsoap:body use="encoded" namespace="urn:webservices.com.my" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cardAdjustment">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="cardAdjustmentRequest">
+        <wsdlsoap:body use="encoded" namespace="urn:webservices.com.my" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="cardAdjustmentResponse">
+        <wsdlsoap:body use="encoded" namespace="urn:webservices.com.my" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="directDebit">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="directDebitRequest">
+        <wsdlsoap:body use="encoded" namespace="urn:webservices.com.my" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="directDebitResponse">
+        <wsdlsoap:body use="encoded" namespace="urn:webservices.com.my" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PINSelection">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="PINSelectionRequest">
+        <wsdlsoap:body use="encoded" namespace="urn:webservices.com.my" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="PINSelectionResponse">
+        <wsdlsoap:body use="encoded" namespace="urn:webservices.com.my" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="limitMngmt">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="limitMngmtRequest">
+        <wsdlsoap:body use="encoded" namespace="urn:webservices.com.my" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="limitMngmtResponse">
+        <wsdlsoap:body use="encoded" namespace="urn:webservices.com.my" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CardworksService">
+    <wsdl:port name="Cardworks" binding="intf:CardworksSoapBinding">
+      <wsdlsoap:address location="https://192.168.47.63:8443/cws/services/Cardworks" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

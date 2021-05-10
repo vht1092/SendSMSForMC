@@ -1,0 +1,238 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B3E74051-118E-46FD-8B81-7A5D46BEE31D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SendSMSForMC</RootNamespace>
+    <AssemblyName>SendSMSForMC</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppCode\classAccumulativeRewardPoint.cs" />
+    <Compile Include="AppCode\classAccumulativeRewardPointLogWriter.cs" />
+    <Compile Include="AppCode\classAnnual_Fee.cs" />
+    <Compile Include="AppCode\classAnnual_FeeLogWriter.cs" />
+    <Compile Include="AppCode\classCheckDueDateLogWriter.cs" />
+    <Compile Include="AppCode\classCheckDueDate.cs" />
+    <Compile Include="AppCode\classDataAccess.cs" />
+    <Compile Include="AppCode\classDataAccessLogWriter.cs" />
+    <Compile Include="AppCode\classExpiredExtension.cs" />
+    <Compile Include="AppCode\classGDHoanTra.cs" />
+    <Compile Include="AppCode\classGDHoanTraLogWriter.cs" />
+    <Compile Include="AppCode\classGDTangTien.cs" />
+    <Compile Include="AppCode\classKichHoatThe.cs" />
+    <Compile Include="AppCode\classKichHoatTheLogWriter.cs" />
+    <Compile Include="AppCode\classOutstandingBalancePaymentAuto.cs" />
+    <Compile Include="AppCode\classOutstandingBalancePaymentAutoLogWriter.cs" />
+    <Compile Include="AppCode\classOutstandingBalancePaymentManual.cs" />
+    <Compile Include="AppCode\classOutstandingBalancePaymentManualLogWriter.cs" />
+    <Compile Include="AppCode\classOutstandingChange.cs" />
+    <Compile Include="AppCode\classOutstandingChangeLogWriter.cs" />
+    <Compile Include="AppCode\classReminderPayment1.cs" />
+    <Compile Include="AppCode\classReminderPayment1LogWriter.cs" />
+    <Compile Include="AppCode\classReminderPayment2.cs" />
+    <Compile Include="AppCode\classExpiredExtensionLogWriter.cs" />
+    <Compile Include="AppCode\classReminderPayment2LogWriter.cs" />
+    <Compile Include="AppCode\classThuNoFail.cs" />
+    <Compile Include="AppCode\classThuNoFailLogWriter.cs" />
+    <Compile Include="AppCode\classUtilities.cs" />
+    <Compile Include="AppCode\classGDTangTienLogWriter.cs" />
+    <Compile Include="AppCode\classNoQuaHan.cs" />
+    <Compile Include="AppCode\classNoQuaHanLogWriter.cs" />
+    <Compile Include="AppCode\classDWFPTLogWriter.cs" />
+    <Compile Include="AppCode\classEBankGWLogWriter.cs" />
+    <Compile Include="AppCode\classGDMCDebit.cs" />
+    <Compile Include="AppCode\classGDMCDebitLogWriter.cs" />
+    <Compile Include="AppCode\BlockAndFailAnnualFee.cs" />
+    <Compile Include="AppCode\BlockAndFailAnnualFeeLogWriter.cs" />
+    <Compile Include="AppCode\classDKIPP.cs" />
+    <Compile Include="AppCode\classDKIPPLogWriter.cs" />
+    <Compile Include="AppCode\classThuNoTatToanIPP.cs" />
+    <Compile Include="AppCode\classThuNoTatToanIPPLogWriter.cs" />
+    <Compile Include="AppCode\classUpdatePhone.cs" />
+    <Compile Include="AppCode\classUpdatePhoneLogWriter.cs" />
+    <Compile Include="AppCode\classCapPhepGD.cs" />
+    <Compile Include="AppCode\classCapPhepGDLogWriter.cs" />
+    <Compile Include="AppCode\classChange_PIN.cs" />
+    <Compile Include="AppCode\DES.cs" />
+    <Compile Include="AppCode\HexKey.cs" />
+    <Compile Include="AppCode\KeyLength.cs" />
+    <Compile Include="AppCode\Utility.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <EmbeddedResource Include="Main.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\CardworksWS\Cardworks.wsdl" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Service References\CardworksWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CardworksWS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CardworksWS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CardworksWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\CardworksWS\SendSMSForMC.CardworksWS.CardAdjustmentRespBean.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CardworksWS\SendSMSForMC.CardworksWS.CardProfileMaintRespBean.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CardworksWS\SendSMSForMC.CardworksWS.CardReloadRespBean.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CardworksWS\SendSMSForMC.CardworksWS.DirectDebitRespBean.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CardworksWS\SendSMSForMC.CardworksWS.HostSignOnRespBean.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CardworksWS\SendSMSForMC.CardworksWS.LimitMngmtRespBean.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CardworksWS\SendSMSForMC.CardworksWS.PINSelectionRespBean.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CardworksWS\SendSMSForMC.CardworksWS.RedeemRewardRespBean.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CardworksWS\SendSMSForMC.CardworksWS.RewardEnquiryRespBean.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
